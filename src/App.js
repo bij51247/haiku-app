@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { PromptInput } from './PromptInput';
 import classes from "./CssModules.module.scss"
 import axios from 'axios';
 
@@ -76,28 +77,21 @@ const App = () => {
       <div className='generate-form'>
 
         <label>俳句を描いてみよう！</label>
-        <input
-          value={upperPrompt}
+        <PromptInput
+          prompt={upperPrompt}
           maxLength='6'
-          onChange={e => {
-            setUpperPrompt(e.target.value);
-          }}
+          onChange={(e) => setUpperPrompt(e.target.value)}
         />
-        <input
-          value={middlePrompt}
+        <PromptInput
+          prompt={middlePrompt}
           maxLength='8'
-          onChange={e => {
-            setMiddlePrompt(e.target.value);
-          }}
+          onChange={(e) => setMiddlePrompt(e.target.value)}
         />
-        <input
-          value={bottomoPrompt}
+        <PromptInput
+          prompt={bottomoPrompt}
           maxLength='6'
-          onChange={e => {
-            setBottomoPrompt(e.target.value);
-          }}
+          onChange={(e) => setBottomoPrompt(e.target.value)}
         />
-
         <button
           onClick={generateImage}
           disabled={isLoading}
