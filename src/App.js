@@ -18,12 +18,14 @@ const App = () => {
   const [imageSize, setImageSize] = useState(512);
   var prompt = upperPrompt +  middlePrompt +  bottomoPrompt;
 
+  const isButtonActive = upperPrompt !== '' && middlePrompt !== '' && bottomoPrompt !== '';
+
   //Google API_KEY
   // AIzaSyAlxn5LKcNw083_QJRaZQyy2b5OA3xSnAA
 
   const generateImage = useCallback(async () => {
     console.log(prompt)
-    if (!prompt) {
+    if (!isButtonActive) {
       alert('プロンプトがありません。');
       return;
     }
@@ -69,7 +71,7 @@ const App = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [format, generateSize, prompt]);
+  }, [format, generateSize, prompt, isButtonActive, isLoading]);
 
   return (
     <div className={classes.container}>
@@ -94,7 +96,7 @@ const App = () => {
         />
         <button
           onClick={generateImage}
-          disabled={isLoading}
+          disabled={!upperPrompt || !middlePrompt || !bottomoPrompt || isLoading}
         >
           {isLoading ? '作成中...' : '画像作成'}
         </button>
