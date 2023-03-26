@@ -1,0 +1,35 @@
+.container{
+
+    .header {
+        background-color: blue;
+        text-align: center;
+        padding: 20px;
+        color: white;
+        font-size: 24px;
+      }
+    
+
+    border: solid 1px #aaa;
+    border-radius: 20px;
+
+    label{
+        // writing-mode: vertical-rl;
+        display: block;
+        text-align: right;
+       }
+
+    textarea{
+        display: block;
+        width: 150px;
+        height: 20px;
+        resize: none;
+        padding: 10px;
+        font-size: 16px;
+        line-height: 1.4;
+        border: 1px solid #ccc;
+    }
+    
+}
+
+
+
