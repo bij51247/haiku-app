@@ -25,10 +25,6 @@ const App = () => {
 
   const generateImage = useCallback(async () => {
     console.log(prompt)
-    if (!isButtonActive) {
-      alert('プロンプトがありません。');
-      return;
-    }
 
     if (isLoading) return;
 
