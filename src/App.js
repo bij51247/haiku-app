@@ -4,7 +4,7 @@ import classes from "./CssModules.module.scss"
 import axios from 'axios';
 
 const API_URL = 'https://api.openai.com/v1/';
-const API_KEY = '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';
+const API_KEY = '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';
 
 const App = () => {
   const [imageData, setImageData] = useState('');
@@ -77,17 +77,17 @@ const App = () => {
         <label>俳句を描いてみよう！</label>
         <PromptInput
           prompt={upperPrompt}
-          maxLength='6'
+          maxLength='60'
           onChange={(e) => setUpperPrompt(e.target.value)}
         />
         <PromptInput
           prompt={middlePrompt}
-          maxLength='8'
+          maxLength='80'
           onChange={(e) => setMiddlePrompt(e.target.value)}
         />
         <PromptInput
           prompt={bottomoPrompt}
-          maxLength='6'
+          maxLength='60'
           onChange={(e) => setBottomoPrompt(e.target.value)}
         />
         <button
